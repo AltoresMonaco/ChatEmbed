@@ -96,7 +96,7 @@ export type LeadsConfig = {
   successMessage?: string;
 };
 
-const defaultWelcomeMessage = 'Salut à tous c\'est michou';
+const defaultWelcomeMessage = "Salut à tous c'est michou";
 
 /*const sourceDocuments = [
     {
