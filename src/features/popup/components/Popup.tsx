@@ -50,6 +50,7 @@ export const Popup = (props: PopupProps) => {
     // eslint-disable-next-line solid/reactivity
     popupProps.isOpen ?? false,
   );
+  const screenWidth = window.innerWidth;
 
   createEffect(() => {
     if (isNotDefined(props.isOpen) || props.isOpen === isBotOpened()) return;
@@ -88,8 +89,8 @@ export const Popup = (props: PopupProps) => {
               class="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
               style={{
                 'background-color': 'transparent',
-                'margin-left': '20px',
-                'margin-right': '20px',
+                'margin-left': screenWidth < 400 ? '0px' : '20px',
+                'margin-right': screenWidth < 400 ? '0px' : '20px',
               }}
               on:click={stopPropagation}
               on:pointerdown={stopPropagation}
